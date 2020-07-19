@@ -1,0 +1,42 @@
+class Program
+        {
+        static void leVetor(int[] vet)
+        {
+            for (int i = 0; i < vet.Length; i++)
+            {
+                Console.Write("Informe um inteiro({0} de {1}): ", i + 1, vet.Length);
+                vet[i] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        static void imprimeMenorVAlor(int[] vet)
+        {
+            int menorValor = 0, indice=0;
+
+            for (int i = 0; i < vet.Length; i++)
+            {
+                if (menorValor == 0)
+                {
+                    menorValor = vet[i];
+                    indice = i;
+                }
+
+                if (vet[i] < menorValor)
+                {
+                    menorValor = vet[i];
+                    indice = i;
+                }
+            }
+
+                Console.Write("O menor número é {0} e seu índice é {1}.", menorValor, indice);
+
+        }
+        static void Main(string[] args)
+            {
+            int[] vet = new int[3];
+
+            leVetor(vet);
+            imprimeMenorVAlor(vet);
+            
+
+            }
+        }
