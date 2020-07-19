@@ -1,0 +1,26 @@
+class Program
+    {
+        static void Main(string[] args)
+        {
+            double[] alunos = new double [10];
+            double somaIdade = 0, media;
+            int cont = 0;
+
+            for ( int i = 0; i  < alunos.Length; i++)
+            {
+                Console.Write("Informe idade dos alunos ({0} de {1}): ", i + 1, alunos.Length);
+                alunos[i] = Convert.ToDouble(Console.ReadLine());
+                somaIdade += alunos[i];
+            }
+
+            media = somaIdade / alunos.Length;
+
+            for (int i = 0; i < alunos.Length; i++)
+            {
+                if (alunos[i] > media)
+                    cont++;
+            }
+
+            Console.Write("Foram encontrados {0} alunos com idade acima da média", cont);
+        }
+    }
