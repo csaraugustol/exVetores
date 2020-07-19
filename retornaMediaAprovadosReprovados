@@ -1,0 +1,47 @@
+class Program
+    {
+        static double retornaMedia(double[] notaAluno, double somaNotas)
+        {
+            double media;
+            return media = somaNotas / notaAluno.Length;
+        }
+        static double retornaAprovados(double[] notaAluno)
+        {
+            int contAprovados=0;
+
+            for (int i = 0; i < notaAluno.Length; i++)
+            {
+                if (notaAluno[i] >= 60)
+                    contAprovados++;
+            }
+            
+            return contAprovados;
+        }
+        static double retornaReprovados(double[] notaAluno)
+        {
+            int contReprovados = 0;
+
+            for (int i = 0; i < notaAluno.Length; i++)
+            {
+                if (notaAluno[i] < 60)
+                    contReprovados++;
+            }
+
+            return contReprovados;
+        }
+        static void Main(string[] args)
+        {
+            double[] notaAluno = new double[10];
+            double somaNotas = 0;
+
+            for (int i =0; i < notaAluno.Length; i++)
+            {
+                Console.WriteLine("NOTA FINAL ALUNO ({0} de {1}): ", i + 1, notaAluno.Length);
+                Console.Write("  Informe nota do aluno: ");
+                notaAluno[i] = Convert.ToDouble(Console.ReadLine());
+                somaNotas += notaAluno[i];
+            }
+
+            Console.Write("Média da turma: {0}\nAlunos Aprovados: {1}\nAlunos Reprovados: {2}", retornaMedia(notaAluno, somaNotas), retornaAprovados(notaAluno), retornaReprovados(notaAluno));
+        }
+    }
