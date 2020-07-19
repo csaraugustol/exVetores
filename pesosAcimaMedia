@@ -1,0 +1,35 @@
+class Program
+    {
+        static double retornaPesoAcimaMedia(double[]peso, double somapeso)
+        {
+            double media;
+            int contPeso = 0;
+
+            media = somapeso / peso.Length;
+
+            for (int i = 0; i < peso.Length; i++)
+            {
+                if (peso[i] > media)
+                    contPeso++;
+
+            }
+
+            return contPeso;
+        }
+       
+        static void Main(string[] args)
+        {
+            double[] peso = new double[7];
+            double somaPeso = 0;
+            
+            for (int i = 0; i < peso.Length; i++)
+            {
+                Console.Write("Peso ({0} de {1}): ", i + 1, peso.Length);
+                peso[i] = Convert.ToDouble(Console.ReadLine());
+                somaPeso += peso[i];
+            }
+
+            Console.Write("Há {0} pessoa(s) com o peso acima da média", retornaPesoAcimaMedia(peso, somaPeso));
+
+        }
+    }
