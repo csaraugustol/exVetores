@@ -1,0 +1,34 @@
+ class Program
+    {
+        static void leVetores(int[] vet1, int[] vet2)
+        {
+            for (int i = 0; i < vet1.Length; i++)
+            {
+                Console.WriteLine("Primeiro Vetor({0} de {1}): ", i + 1, vet1.Length);
+                vet1[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            for (int i = 0; i < vet2.Length; i++)
+            {
+                Console.WriteLine("Segundo Vetor({0} de {1}): ", i + 1, vet2.Length);
+                vet2[i] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        static void imprimeVetores(int[] vet1, int[] vet2)
+        {
+            Console.WriteLine("Soma dos elementos dos vetores: ");
+            for (int i = 0; i<vet1.Length; i++)
+            {
+                Console.WriteLine(vet1[i] + vet2[i]);
+            }
+        }
+        static void Main(string[] args)
+        {
+            int[] vet1 = new int[5];
+            int[] vet2 = new int[5];
+
+            leVetores(vet1, vet2);
+            imprimeVetores(vet1, vet2);
+
+        }
+    }
